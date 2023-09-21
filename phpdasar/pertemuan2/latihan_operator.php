@@ -59,5 +59,12 @@
     // &&, ||, !
     $x = 10;
     var_dump($x < 20 && $x % 2 == 0); // maksud dari kondisi kodingan di samping, && maksudnya dalam var_dump di 2 kondisi harus bernilai true dua duanya
+                                        // jadi pokoknya 2 pengkondisian dengan syarat harus benar
+                                        // kalo di terjemahkan, variabel x apakah lebih kecil dari 22 DAN apakah variabel x di bagi 2 sama dengan 0
+                                        // kalo 2 kondisi udah bener semua yang ditampilkan web akan muncul TRUE
+                                        // kalo dari salah satu kondisi itu ada yg salah, di web akan menampilkan false
+    var_dump($x < 5  || $x % 2 == 0); // beda dengan kodingan diatas kalau kodingan di samping syarat nya cuma salah satu dari 2 kondisi yang dibuat
+                                        // program bisa menampilkan TRUE, dalam sistem pengkondisian jikalu salah satu syarat terpenuhi program akan
+                                        // bisa berjalan
 
 ?>
