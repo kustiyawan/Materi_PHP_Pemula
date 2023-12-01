@@ -63,6 +63,21 @@
     // $jarak = $tgl2 - $tgl1;
     // $hari = $jarak / 60 / 60 /24;
     // echo $hari;
-    
+
+    //mktime 
+    // membuat detik sendiri 
+    // menggunakan 6 parameter
+    // mktime(0,0,0,0,0,0)
+    // jam, menit, detik, bulan, tanggal, tahun
+    // echo mktime(0,0,0,8, 25, 1985); // menampilkan jumlah detik dari 1 januari 1970 sampai tanggal yang di 
+                                    // tentukan sesuai keinginan kita dalam memakai mktime
+    // echo date("l", mktime(0,0,0,8, 25, 1985)); // contoh jika ingin menampilkan nama hari dari pengisian format tanggal angka
+
+    // strtotime
+    // beda dari mktime yang parameter nya menggunakan format tanggal angka
+    // di strtotime bisa langsung memakai format tanggal yang biasanya ada nama bulan
+    // simple nya strtotime bisa pakai string
+    echo strtotime("08 December 2000"); // sama sama bisa tampil detik
+    echo date ("l", strtotime("08 dec 2000")); // jika ingin menampilkan hari dari tanggal yang di inginkan
 
 ?>
