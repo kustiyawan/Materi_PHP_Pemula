@@ -54,6 +54,20 @@ $angka = [3, 2, 15, 20, 11, 77, 89, 888];
     konsep nya "foreach"akan mengecek 1 1 eleman dari araay, diambil data elemen/value nilai itu kemudian
     ditaruh ke variabel baru, nah variable baru ini akan digunakan untuk mencetakq array tadi -->
 
+    <?php foreach( $angka as $a) { ?>  <!-- jadi fungsi dari variabel $a ini sebagai representasi tiap tiap elemen elemen / value dari
+                                        array "$angka", analoginya elemen pertama dari array $angka yaitu 3 akan dikirimkan ke variabel $a
+                                        variabel $a kemudian bisa di cetak, nanti akan di ulang lagi sampai semua elemen, fungsi foreach itu 
+                                        yang bisa otomatis hitung dari sebuah variabel array -->
+        <div class="kotak"> <?php echo $a ?> </div>
+    <?php } ?>
+
+    <div class="clear"></div>
+
+    <!-- ada cara yang lain kalau bingung dengan kurung kurawal, bisa memakai teknik templating -->
+    <?php foreach ($angka as $a ) : ?>
+        <div class="kotak"> <?= $a ?> </div>
+    <?php endforeach; ?> <!-- jadi di akhir bisa ditutup dengan end nama fungsi syntax nya, jadi endforeach -->
+
 
 
 
