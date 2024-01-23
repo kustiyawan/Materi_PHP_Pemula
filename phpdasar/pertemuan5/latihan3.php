@@ -9,6 +9,7 @@
 $mahasiswa = [
     ["Sandhika Galih", "043040023", "Teknik Informatika", "sandhikagalih@unpas.ac.id"],
     ["Baim Wong", "043364190", "Teknik Informatika", "baimwong@yahoo.com"],
+    ["Erik", "023040123", "Teknik Planologi", "erik@gmail.com"]
 
 ];
 
@@ -42,9 +43,21 @@ $mahasiswa = [
         <li><?= $mahasiswa[2]; ?></li>
         <li><?= $mahasiswa[3]; ?></li> -->
 
-        <!-- cara mencetak array dari array multi dimensi -->
-        
-
     </ul>
+    <!-- cara mencetak array dari array multi dimensi -->
+
+        <?php foreach( $mahasiswa as $mhs ) : ?> 
+            <!-- $mahasiswa merupakan array terluar, sumber array yang akan di pindahkan ke $mhs, 
+                tiap melakukan pengulangan 1 data akan dipindahkan ke $mhs, $mhs akan di cetak atau di olah lagi
+                seperti di masukkan suatu rumus dalam variabel, dan melakukan proses tersebut secara berulang ulang
+                sampai data terakhir -->
+            <ul>
+                <li>Nama : <?= $mhs[0]; ?></li>
+                <li>NRP : <?= $mhs[1]; ?></li>
+                <li>Jurusan : <?= $mhs[2]; ?></li>
+                <li>Email : <?= $mhs[3]; ?></li>
+            </ul>
+        <?php endforeach; ?>
+    
 </body>
 </html>
