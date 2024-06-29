@@ -8,6 +8,38 @@
 <!-- dibawah sini akan di buat per kondisian -->
 <?php 
     // cek apakah tidak ada data di $_GET
+    // bisa menggunakan "isset", secara fungsi isset digunakan untuk mengecek apakah sebuah variabel sudah pernah di buat atau belum
+    // jadi jikalau kondisi dibawah tidak ada, saat user langsung mengetikan url link latihan2_1.php akan terjadi error
+    // error nya gimana?, error terjadi karena $_GET dari key nama(contoh yg digunakan di latihan ini) itu belum pernah dibikin, karena user langsung menuju link latihan2_1.php
+                                                        //file latihan2_1.php ini jadi gak tahu key nama ini berasal dari mana tapi dipaksa untuk mencetak
+                                                        // terjadilah error 
+
+    // dibawah adalah cara pengecekkan jikalau user nakal hanya memasukkan link file nya saja, tidak dengan mencantumkah memasukkan data nama atau yang lainnya lewat link
+    // if ( !isset($_GET["nama"]) ) { // dari syntax di samping penjelasannya, apakah $_GET dengan key nama pernah di buat apa belum
+    //                             // jikalau ada tanda ! di belakang isset seperti => !isset, berarti penjelasannya menambah tanda seru artinya NOT/tidak
+    //                             // jadi jika $_GET dengan key nama tidak di buat maka lakukan sesuatu..... --> jika ada tanda seru
+    //                             // jika $_GET dengan key nama sudah di buat maka lakukan sesuatu.....---> itu penjelasan jika tanpa tanda ! 
+        
+    //     // setelah terkonfirmasi asal usul key nama belum diketahui
+    //     // maka lakukan yang namanya redirect, memindahkan user dari sebuah halaman ke halaman lain
+        
+    //     header("Location: latihan1_4.php"); // pindahkan user secara paksa ke link latihan1_4.php, ingat huruf L nya harus besar pada syntax Location
+    //     exit; // exit agar program di bawah tidak di eksekusi
+    // }
+
+    // dibawah adalah cara jikalau user nakal masuk langsung lewat link sekaligus mengisi data seperti nama,nrp (untuk contoh pembuatan program ini)
+
+    // maksud kodingan di bawah jika salah satu data ditulis oleh user contoh nama, dan yg lain tidak, user tetep akan di lempar ke halaman pertama yang mengharuskan untuk klik
+    if ( !isset($_GET["nama"]) ||
+        !isset($_GET["nrp"]) ||
+        !isset($_GET["email"]) ||
+        !isset($_GET["jurusan"]) ||
+        !isset($_GET["gambar"])) {
+        
+            //redirect
+            header("Location: latihan1_4.php");
+            exit;
+    }
 
 ?>
 
@@ -27,7 +59,7 @@
          contoh di file latihan1_4.php, ngambil key yg mana
          <a href="latihan2_1.php?nama=<?= $mhs["nama"]; ?>" > <?= $mhs["nama"]; ?> </a> 
          dari contoh di atas key yang dimaksud adalah kata "nama" yang tidak memakai tanda petik
-         setelah kata href="latihan2_1.php?nama <--- key yang dimaksud -->
+         setelah kata href="latihan2_1.php?nama <== key yang dimaksud -->
 
 
         <li><img src="img/<?= $_GET["gambar"]; ?>" alt=""></li> 
